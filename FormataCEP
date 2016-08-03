@@ -1,7 +1,12 @@
-Let(cleanCPF = Filter(Self;"0123456789");
+Let(cleanCEP = Filter(Self;"0123456789");
 
-  If (Length(cleanCPF) = 11;
-  Left(cleanCPF;3) & "." & Middle(cleanCPF;4;3) & "." & Middle(cleanCPF;7;3) & "-" & Right(cleanCPF;2);
+  Case (
+
+  Length(cleanCEP) = 5;
+  Left(cleanCEP;2) & "." & Right(cleanCEP;3) & "-000";
+
+  Length(cleanCEP) = 8;
+  Left(cleanCEP;2) & "." & Middle(cleanCEP;3;3) & "-" & Right(cleanCEP;3);
 
   Self)
 )
