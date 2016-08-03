@@ -1,0 +1,39 @@
+Case(Length(CNS) ≠ 15; 0;
+
+     Filter(Left(CNS;1);"12") ≠ "";
+     Let([Soma = Middle(CNS; 1;1) * 15 +
+                 Middle(CNS; 2;1) * 14 +
+                 Middle(CNS; 3;1) * 13 +
+                 Middle(CNS; 4;1) * 12 +
+                 Middle(CNS; 5;1) * 11 +
+                 Middle(CNS; 6;1) * 10 +
+                 Middle(CNS; 7;1) *  9 +
+                 Middle(CNS; 8;1) *  8 +
+                 Middle(CNS; 9;1) *  7 +
+                 Middle(CNS;10;1) *  6 +
+                 Middle(CNS;11;1) *  5 ;
+          DV   = 11 - Mod(Soma;11); 
+          DV = If(DV = 10; 11 - Mod(Soma + 2 ;11); DV);
+          DV = If(DV = 11; 0; DV)];
+          DV = Int(Right(CNS;2))
+     );
+
+     Filter(Left(CNS;1);"789") ≠ "";
+     Let([Soma = Middle(CNS; 1;1) * 15 +
+                 Middle(CNS; 2;1) * 14 +
+                 Middle(CNS; 3;1) * 13 +
+                 Middle(CNS; 4;1) * 12 +
+                 Middle(CNS; 5;1) * 11 +
+                 Middle(CNS; 6;1) * 10 +
+                 Middle(CNS; 7;1) *  9 +
+                 Middle(CNS; 8;1) *  8 +
+                 Middle(CNS; 9;1) *  7 +
+                 Middle(CNS;10;1) *  6 +
+                 Middle(CNS;11;1) *  5 +
+                 Middle(CNS;12;1) *  4 +
+                 Middle(CNS;13;1) *  3 +
+                 Middle(CNS;14;1) *  2 +
+                 Middle(CNS;15;1)];
+          Mod(Soma; 11) = 0
+     );
+)
