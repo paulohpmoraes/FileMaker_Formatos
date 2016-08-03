@@ -1,0 +1,18 @@
+Let(cleanPhone = Filter(Self;"0123456789");
+
+  Case(
+
+  Length(cleanPhone) = 8;
+  Left(cleanPhone;4) & "-" & Right(cleanPhone;4);
+
+  Length(cleanPhone) = 9;
+  Left(cleanPhone;5) & "-" & Right(cleanPhone;4);
+
+  Length(cleanPhone) = 9;
+  Left(cleanPhone;5) & "-" & Right(cleanPhone;4);
+
+  Length(cleanPhone) = 10;
+  "(" & Left(cleanPhone;2) & ") " & Middle(cleanPhone;3;4) & "-" & Right(cleanPhone;4);
+
+  Length(cleanPhone) = 11;
+  "(" & Left(cleanPhone;2) & ") " & Middle(cleanPhone;3;5) & "-" & Right(cleanPhone;4);
