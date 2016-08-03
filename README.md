@@ -1,5 +1,4 @@
 # FileMaker Tools
-========
 Fuções para formatar e validar diversos números no FileMaker
 
 ## FormataTelefone
