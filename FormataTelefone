@@ -17,5 +17,5 @@ Let(cleanPhone = Filter(Self;"0123456789");
   Length(cleanPhone) = 11;
   "(" & Left(cleanPhone;2) & ") " & Middle(cleanPhone;3;5) & "-" & Right(cleanPhone;4);
 
-  )
+  Self)
 )
