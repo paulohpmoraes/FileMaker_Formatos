@@ -1,0 +1,2 @@
+Let(cleanCPF = Filter(Self;"0123456789");
+    Left(cleanCPF;3) & "." & Middle(cleanCPF;4;3) & "." & Middle(cleanCPF;7;3) & "-" & Right(cleanCPF;2))
