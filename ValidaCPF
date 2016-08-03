@@ -1,5 +1,5 @@
-
-Let([validCPF = Filter(Self;"0123456789");
+If(Length(CPF)<>9;0;
+Let([validCPF = Filter(CPF;"0123456789");
      D1 = Middle(validCPF;1;1);
      D2 = Middle(validCPF;2;1);
      D3 = Middle(validCPF;3;1);
@@ -15,4 +15,6 @@ Let([validCPF = Filter(Self;"0123456789");
      V2 = Mod((D1*0)+(D2*1)+(D3*2)+(D4*3)+(D5*4)+(D6*5)+(D7*6)+(D8*7)+(D9*8)+(V1*9);11);
      V2 = V2*(V2<10);
      V  = V1 & V2];
-V <> Right(validCPF;2))
+     V = Right(validCPF;2)
+   )
+)
